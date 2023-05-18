@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking.com</title>
+    <link rel="stylesheet" href="./assets/styles/reset.css">
+    <link rel="stylesheet" href="./assets/styles/footerStyle.css">
+    <link rel="stylesheet" href="./assets/styles/header.css">
+    <link rel="stylesheet" href="./assets/styles/homePage.css">
+    <link rel="stylesheet" href="./assets/styles/displayHotels.css">
+    <link rel="stylesheet" href="assets/styles/Carousels/firstCarousel.css">
+    <link rel="stylesheet" href="assets/styles/Carousels/secondCarousel.css">
+    <link rel="stylesheet" href="assets/styles/Carousels/thirdCarousel.css">
+    <link rel="stylesheet" href="assets/styles/errorPage.css">
+    <link rel="stylesheet" href="assets/styles/modals.css">
+    <link rel="icon" href="./assets/images/BookingIcon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@600;900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/4b9ba14b0f.js" crossorigin="anonymous"></script>
+
+
+    <style>
+        * {
+            font-family: BlinkMacSystemFont, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div id="headerContainer">
+            <div id="headerTop">
+                <a href="#home">
+                    <img src="assets/images/logo.png" alt="page-logo" id='main-logo'>
+                </a>
+
+                <div id="headerButtons">
+                    <button data-tooltip="Избор на валута" id="language-button">BGN</button>
+                    <button data-tooltip="Избор на език" id="bulgarian-flag"><img src="assets/images/bulgarian-flag.png"
+                            alt="bulgarian-flag"></button>
+                    <button data-tooltip='"Oбслужване на клиенти"' id="help-logo"><img src="assets/images/help.png"
+                            alt="help-logo"></button>
+
+                    <a href="#home"><span class='registerButton'>Регистрирайте мястото си за настаняване</span></a>
+                    <a href="#"><span class='createProfileButton'>Създайте личен профил</span></a>
+                    <a href="#"><span class='loginButton'>Вход</span></a>
+                    <a href="#favourites"><span class='profileButton'>Профил</span></a>
+                    <a href="#"><span class='logoutButton'>Изход</span></a>
+                </div>
+            </div>
+
+            <div id="headerBottom">
+                <a href="#home"><img src="assets/images/bed-icon.png" id="bedIcon" alt=""><span>Престои</span></a>
+                <a href="https://flights-bg.gotogate.com/poleti"><img src="assets/images/plane-icon.png"
+                        id="flightsIcon" alt=""><span>Полети</span></a>
+                <a href="#rent"><img src="assets/images/car-icon.png" id="rentIcon" alt=""><span>Коли под
+                        наем</span></a>
+                <a href="#attractions"><img src="assets/images/attraction-icon.png" id="attractionsIcon"
+                        alt=""><span>Атракции</span></a>
+                <a href="#taxis"><img src="assets/images/taxi-icon.png" id="taxiIcon" alt=""><span>Таксита от/до
+                        летище</span></a>
+                <a href="#displayHomes"><span class='displayHomes'></span></a>
+                <a href="#showCurrentHotel"><span class='currentHotel'></span></a>
+
+            </div>
+        </div>
+    </header>
+
+
+    <main>
+        <div id="mainContainer">
+            <div class="searchField">
+                <div id="searchFieldTextContainer">
+                    <h2>Открийте оферти за хотели, домове и много повече... </h2>
+                    <p>От уютни къщи извън града до стилни градски апартаменти</p>
+                </div>
+
+                <form action="#displayHomes">
+                    <div id='searchInput'>
+                        <input type="text" name="" id="search-box" placeholder='Накъде отивате?' list="destinаtions">
+                        <datalist id="destinаtions">
+                            <option>Милано</option>
+                            <option>Керамоти</option>
+                            <option>Лас Палмас де Гран Канария</option>
+                            <option>Рио де Жанейро</option>
+                            <option>Пукет</option>
+                            <option>Виена</option>
+                            <option>Лондон</option>
+                            <option>Париж</option>
+                            <option>Созопол</option>
+                            <option>Атина</option>
+                        </datalist>
+                        <button id="homepageSearchButton">Търсене</button>
+                    </div>
+
+                    <div id="jobTripContainer">
+                        <input type="checkbox" value='workTravel' id='jobTrip'>
+                        <label for="jobTrip" id="jobTripLabel">Пътувам по работа</label>
+                    </div>
+                </form>
+            </div>
+
+
+            <div class="wrapper" id="mostPopularContainer">
+                <h2>Най-популярните почивки на плажа</h2>
+                <p>Популярни сред пътуващи в района ви.</p>
+
+                <div class="carousel" id="beachDestinations">
+                    <div class="content" id="destinationsContainer">
+                        <div>
+                            <img class="destinationItems" src="./assets/images/BulgariaPhoto.jpg" />
+                            <span>България</span>
+                        </div>
+                        <div>
+                            <img src="./assets/images/GreecePhoto.jpg" class="destinationItems" />
+                            <span>Гърция</span>
+                        </div>
+
+                        <div>
+                            <img src="./assets/images/SpainPhoto.jpg" class="destinationItems" />
+                            <span>Испания</span>
+                        </div>
+
+                        <div>
+                            <img src="./assets/images/ItalyPhoto.jpg" class="destinationItems" />
+                            <span>Италия</span>
+                        </div>
+
+                        <div>
+                            <img src="./assets/images/TurkeyPhoto.jpg" class="destinationItems" />
+                            <span>Турция</span>
+                        </div>
+
+                        <div>
+                            <img src="./assets/images/USAPhoto.jpg" class="destinationItems" />
+                            <span>САЩ</span>
+                        </div>
+
+                        <div>
+                            <img src="./assets/images/TailandPhoto.jpg" class="destinationItems" />
+                            <span>Тайланд</span>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="prev">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                        <path fill="none" d="M0 0h24v24H0V0z" />
+                        <path d="M15.61 7.41L14.2 6l-6 6 6 6 1.41-1.41L11.03 12l4.58-4.59z" />
+                    </svg>
+                </button>
+                <button class="next">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                        <path fill="none" d="M0 0h24v24H0V0z" />
+                        <path d="M10.02 6L8.61 7.41 13.19 12l-4.58 4.59L10.02 18l6-6-6-6z" />
+                    </svg>
+                </button>
+            </div>
+
+            <div class="second-wrapper" id="knowBulgariaContainer">
+                <h3>Опознайте България</h3>
+                <p>Тези популярни дестинации имат много какво да предложат</p>
+
+                <div class="second-carousel" id="bulgariaDestinations">
+                    <div class="second-content" class="destinationsInBulgariaContainer">
+                        <div>
+                            <img src="assets/images/VelingradPhoto.jpg" alt="">
+                            <p class="destinationsInBulgariaTitles">Велинград</p>
+                            <p class="destinationsInBulgariaFreeRooms">153 места за настаняване</p>
+                        </div>
+
+                        <div>
+                            <img src="assets/images/BanskoPhoto.jpg" alt="">
+                            <p class="destinationsInBulgariaTitles">Банско</p>
+                            <p class="destinationsInBulgariaFreeRooms">707 места за настаняване</p>
+                        </div>
+
+                        <div>
+                            <img src="assets/images/BorovetsPhoto.jpg" alt="">
+                            <p class="destinationsInBulgariaTitles">Боровец</span>
+                            <p class="destinationsInBulgariaFreeRooms">166 места за настаняване</p>
+                        </div>
+
+                        <div>
+                            <img src="assets/images/PamporovoPhoto.jpg" alt="">
+                            <p class="destinationsInBulgariaTitles">Пампорово</span>
+                            <p class="destinationsInBulgariaFreeRooms">195 места за настаняване</p>
+                        </div>
+
+                        <div>
+                            <img src="assets/images/HisaryaPhoto.jpg" alt="">
+                            <p class="destinationsInBulgariaTitles">Хисаря</span>
+                            <p class="destinationsInBulgariaFreeRooms">54 места за настаняване</p>
+                        </div>
+
+                        <div>
+                            <img src="assets/images/SaparevaBanyaPhoto.jpg" alt="">
+                            <p class="destinationsInBulgariaTitles">Сапарева баня</span>
+                            <p class="destinationsInBulgariaFreeRooms">104 места за настаняване</p>
+                        </div>
+
+                        <div>
+                            <img src="assets/images/BanyaPhoto.jpg" alt="">
+                            <p class="destinationsInBulgariaTitles">Баня</span>
+                            <p class="destinationsInBulgariaFreeRooms">16 места за настаняване</p>
+                        </div>
+
+                        <div>
+                            <img src="assets/images/SofiaPhoto.jpg" alt="">
+                            <p class="destinationsInBulgariaTitles">София</span>
+                            <p class="destinationsInBulgariaFreeRooms">1753 места за настаняване</p>
+                        </div>
+
+                        <div>
+                            <img src="assets/images/SandanskiPhoto.jpg" alt="">
+                            <p class="destinationsInBulgariaTitles">Сандански</span>
+                            <p class="destinationsInBulgariaFreeRooms">209 места за настаняване</p>
+                        </div>
+
+                        <div>
+                            <img src="assets/images/OgnyanovoPhoto.jpg" alt="">
+                            <p class="destinationsInBulgariaTitles">Огняново</span>
+                            <p class="destinationsInBulgariaFreeRooms">28 места за настаняване</p>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="second-prev">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                        <path fill="none" d="M0 0h24v24H0V0z" />
+                        <path d="M15.61 7.41L14.2 6l-6 6 6 6 1.41-1.41L11.03 12l4.58-4.59z" />
+                    </svg>
+                </button>
+                <button class="second-next">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                        <path fill="none" d="M0 0h24v24H0V0z" />
+                        <path d="M10.02 6L8.61 7.41 13.19 12l-4.58 4.59L10.02 18l6-6-6-6z" />
+                    </svg>
+                </button>
+            </div>
+
+            <div id="likedHomes">
+                <h2>Домове, които гостите много харесват</h2>
+
+                <div id="likedHomesContainer"></div>
+            </div>
+
+            <div class="third-wrapper" id="typesOfHomesContainer">
+                <h2>Търсете по тип място за настаняване</h2>
+
+                <div class="third-carousel" id="accomodationType">
+                    <div class="third-content" class="accomodationTypeContainer">
+                        <div>
+                            <img src="assets/images/TypeAccomodation/hotels.png" alt="">
+                            <p class="accomodationTitles">Хотели</p>
+                            <p class="accomodationNumber">756 043 хотела</p>
+                        </div>
+
+                        <div>
+                            <img src="assets/images/TypeAccomodation/apartments.png" alt="">
+                            <p class="accomodationTitles">Апартаменти</p>
+                            <p class="accomodationNumber">677 364 апартаменти</p>
+                        </div>
+
+                        <div>
+                            <img src="assets/images/TypeAccomodation/hotelComplexes.png" alt="">
+                            <p class="accomodationTitles">Хотелски Комплекси</span>
+                            <p class="accomodationNumber">17 965 хотелски комплекса</p>
+                        </div>
+
+                        <div>
+                            <img src="assets/images/TypeAccomodation/villas.png" alt="">
+                            <p class="accomodationTitles">Вили</span>
+                            <p class="accomodationNumber">367 236 луксозни вили</p>
+                        </div>
+
+                        <div>
+                            <img src="assets/images/TypeAccomodation/chalets.png" alt="">
+                            <p class="accomodationTitles">Шалети</span>
+                            <p class="accomodationNumber">29 067 шалети</p>
+                        </div>
+
+                        <div>
+                            <img src="assets/images/TypeAccomodation/VillasTypeCottage.jpg" alt="">
+                            <p class="accomodationTitles">Вили тип котидж</span>
+                            <p class="accomodationNumber">126 959 вили тип котидж</p>
+                        </div>
+
+                        <div>
+                            <img src="assets/images/TypeAccomodation/LuxuriousCumpings.jpg" alt="">
+                            <p class="accomodationTitles">Луксозни къмпинги</span>
+                            <p class="accomodationNumber">9 129 луксозни къмпинги</p>
+                        </div>
+
+                        <div>
+                            <img src="assets/images/TypeAccomodation/ApartHotels.jpg" alt="">
+                            <p class="accomodationTitles">Апартхотели</span>
+                            <p class="accomodationNumber">31 208 апартхотела</p>
+                        </div>
+
+                        <div>
+                            <img src="assets/images/TypeAccomodation/VacationHouses.jpg" alt="">
+                            <p class="accomodationTitles">Ваканционни къщи</span>
+                            <p class="accomodationNumber">367 684 ваканционни къщи</p>
+                        </div>
+
+                        <div>
+                            <img src="assets/images/TypeAccomodation/GuestHouse.jpg" alt="">
+                            <p class="accomodationTitles">Къщи за гости</span>
+                            <p class="accomodationNumber">102 509 къщи за гости</p>
+                        </div>
+
+                        <div>
+                            <img src="assets/images/TypeAccomodation/Hostels.jpg" alt="">
+                            <p class="accomodationTitles">Хостели</span>
+                            <p class="accomodationNumber">18 641 хостели</p>
+                        </div>
+
+                        <div>
+                            <img src="assets/images/TypeAccomodation/Motels.jpg" alt="">
+                            <p class="accomodationTitles">Мотели</span>
+                            <p class="accomodationNumber">13 917 мотела</p>
+                        </div>
+
+                        <div>
+                            <img src="assets/images/TypeAccomodation/Riokans.jpg" alt="">
+                            <p class="accomodationTitles">Риокани</span>
+                            <p class="accomodationNumber">2 337 риокана</p>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="third-prev">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                        <path fill="none" d="M0 0h24v24H0V0z" />
+                        <path d="M15.61 7.41L14.2 6l-6 6 6 6 1.41-1.41L11.03 12l4.58-4.59z" />
+                    </svg>
+                </button>
+                <button class="third-next">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                        <path fill="none" d="M0 0h24v24H0V0z" />
+                        <path d="M10.02 6L8.61 7.41 13.19 12l-4.58 4.59L10.02 18l6-6-6-6z" />
+                    </svg>
+                </button>
+            </div>
+
+        </div>
+
+        <div id="rentCarContainer">
+
+        </div>
+
+        <div id='currentHotelContainer'></div>
+
+        <div id="attractionsContainer">
+
+        </div>
+
+        <div id="taxisContainer"></div>
+
+        <div id="allHotelsByDestination">
+            <div id="allHotelsByDestinationContainer">
+                <div id="hotelFiltration">
+                    <div id="hotelFiltrationContainer">
+                        <div id="filterByContainer">
+                            <h2 id="filterBy">Филтриране по:</h2>
+                        </div>
+
+                        <div class="filterParts" id="popularFilters">
+                            <div>
+                                <h2 class="filterHeaders" id="popularFiltersHeader">Популярни филтри</h2>
+                            </div>
+
+                            <div class="checkboxLabelContainer">
+                                <input type="checkbox" id="hotelsTypeFiltration" name="hotelsTypeFiltration">
+                                <label for="hotelsTypeFiltration">Хотели</label>
+                            </div>
+
+                            <div class="checkboxLabelContainer">
+                                <input type="checkbox" id="guestHouseFiltration" name="guestHouseFiltration">
+                                <label for="guestHouseFiltration">Къща за гости</label>
+                            </div>
+
+                            <div class="checkboxLabelContainer">
+                                <input type="checkbox" id="poolFiltration" name="poolFiltration">
+                                <label for="poolFiltration">Плувен басейн</label>
+                            </div>
+
+                            <div class="checkboxLabelContainer">
+                                <input type="checkbox" id="villasFiltration" name="villasFiltration">
+                                <label for="villasFiltration">Вили</label>
+                            </div>
+
+                            <div class="checkboxLabelContainer">
+                                <input type="checkbox" id="spaFiltration" name="spaFiltration">
+                                <label for="spaFiltration">Спа център</label>
+                            </div>
+                        </div>
+
+                        <div class="filterParts" id="popularFilters">
+                            <div>
+                                <h2 class="filterHeaders" id="categoryHeader">Категория</h2>
+                            </div>
+
+                            <div class="checkboxLabelContainer">
+                                <input type="checkbox" id="oneStarFilter" name="oneStarFilter">
+                                <label for="oneStarFilter">1 звезда</label>
+                            </div>
+
+                            <div class="checkboxLabelContainer">
+                                <input type="checkbox" id="twoStarsFilter" name="twoStarsFilter">
+                                <label for="twoStarsFilter">2 звезди</label>
+                            </div>
+
+                            <div class="checkboxLabelContainer">
+                                <input type="checkbox" id="threeStarsFilter" name="threeStarsFilter">
+                                <label for="threeStarsFilter">3 звезди</label>
+                            </div>
+
+                            <div class="checkboxLabelContainer">
+                                <input type="checkbox" id="fourStarsFilter" name="fourStarsFilter">
+                                <label for="fourStarsFilter">4 звезди</label>
+                            </div>
+
+                            <div class="checkboxLabelContainer">
+                                <input type="checkbox" id="fiveStarsFilter" name="fiveStarsFilter">
+                                <label for="fiveStarsFilter">5 звезди</label>
+                            </div>
+                        </div>
+
+                        <div class="filterParts" id="entertainmentFilter">
+                            <div>
+                                <h2 class="filterHeaders" id="entertainmentHeader">Развлечения</h2>
+                            </div>
+
+                            <div class="checkboxLabelContainer">
+                                <input type="checkbox" id="petsFilter" name="petsFilter">
+                                <label for="petsFilter">Позволено за Домашни любимци</label>
+                            </div>
+
+                            <div class="checkboxLabelContainer">
+                                <input type="checkbox" id="breakfastFilter" name="breakfastFilter">
+                                <label for="breakfastFilter">Със Закуска</label>
+                            </div>
+
+                            <div class="checkboxLabelContainer">
+                                <input type="checkbox" id="fitnessFilter" name="fitnessFilter">
+                                <label for="fitnessFilter">Фитнес център</label>
+                            </div>
+                        </div>
+
+                        <div class="filterParts" id="ratingsFilter">
+                            <div>
+                                <h2 class="filterHeaders" id="ratingsHeader">Оценка от отзиви</h2>
+                            </div>
+
+                            <div class="checkboxLabelContainer">
+                                <input type="checkbox" id="fantasticFilter" name="fantasticFilter">
+                                <label for="fantasticFilter">Фантастичен 9.4+</label>
+                            </div>
+
+                            <div class="checkboxLabelContainer">
+                                <input type="checkbox" id="superbFilter" name="superbFilter">
+                                <label for="superbFilter">Превъзходен 9+</label>
+                            </div>
+
+                            <div class="checkboxLabelContainer">
+                                <input type="checkbox" id="excellentFilter" name="excellentFilter">
+                                <label for="excellentFilter">Отличен 8.7+</label>
+                            </div>
+
+                            <div class="checkboxLabelContainer">
+                                <input type="checkbox" id="veryGoodFilter" name="veryGoodFilter">
+                                <label for="veryGoodFilter">Много добър 8+</label>
+                            </div>
+
+                            <div class="checkboxLabelContainer">
+                                <input type="checkbox" id="goodFilter" name="goodFilter">
+                                <label for="goodFilter">Добър 7.5+</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div id='hotelsByDestinationContainer'>
+
+                </div>
+
+                <div id="showCurrentHotel"></div>
+
+            </div>
+        </div>
+
+        <div id="errorPageContainer">
+            <div class="mainbox">
+                <div class="err">4</div>
+                <i class="far fa-question-circle fa-spin"></i>
+                <div class="err2">4</div>
+                <div class="msg">Maybe this page moved? Got deleted? Is hiding out in quarantine? Never existed in the
+                    first place?<p id="goToHomePageText">Let's go <a href="#home">home</a> and try from there.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class='modal-bg' id='modal-bg-login'>
+            <div id='loginModal'>
+                <h2 id="loginModalHeading" class="registerAndLoginHeadings">Sign in with</h2>
+
+                <div id="facebookAndGoogleLoginContainer">
+                    <button class="loginBtns loginBtn--facebook">
+                        Sign in with Facebook
+                    </button>
+
+                    <button class="loginBtns loginBtn--google">
+                        Sign in with Google
+                    </button>
+                </div>
+
+                <form action="">
+                    <input type="text" placeholder="Username" id='usernameInput' class="inputRegAndLog">
+                    <input type="password" placeholder="Password" id='passwordInput' class="inputRegAndLog">
+                    <div id='loginButtonsContainer'>
+                        <button id='loginBtnModal'>Login</button>
+                        <!-- <button id='goToRegistrationButton'>Register</button> -->
+                    </div>
+                    <span class='modal-close' id='modal-close-login'>X</span>
+                </form>
+            </div>
+        </div>
+
+        <div class='modal-bg' id='modal-bg-register'>
+            <div id='registerModal'>
+                <h2 id="registerModalsHeading" class="registerAndLoginHeadings">Sign up with</h2>
+
+                <div id="facebookAndGoogleLoginContainer">
+                    <button class="loginBtns loginBtn--facebook">
+                        Sign up with Facebook
+                    </button>
+
+                    <button class="loginBtns loginBtn--google">
+                        Sign up with Google
+                    </button>
+                </div>
+
+                <form id="loginForm" action="">
+                    <input type="text" placeholder="Username" id='usernameInputReg' class="inputRegAndLog">
+                    <input type="password" placeholder="Password" id='passwordInputReg' class="inputRegAndLog">
+                    <input type="password" placeholder="Repeat password" id='repeatPasswordInputReg'
+                        class="inputRegAndLog">
+                    <input type="email" placeholder='Email' id="emailInputReg" class="inputRegAndLog">
+                    <button id='submitBtnReg'>Register</button>
+                    <span class='modal-close' id='modal-close-register'>X</span>
+                </form>
+            </div>
+        </div>
+        <!-- <div class='modal-bg' id='modal-bg-register-home'>
+            <div id='registerHomeModal'>
+                <form action="">
+                    <h2>Register new home</h2>
+                    <input type="text" placeholder="Hotel Name" id='registerHotelName'>
+                    <input type="text" placeholder='Hotel address' id='registerHotelAddress'>
+                    <input type="number" placeholder="Stars" id='registerStars'>
+                    <input type="text" placeholder="Facilities" id='registerFacilities'>
+                    <input type='image'>
+                    <input type='image'>
+                    <input type='image'>
+                    <input type='image'>
+                    <input type='image'>
+                    <input type='image'>
+                    <input type="text" placeholder="Type of the object">
+                    <input type="number" placeholder="Price per night">
+                    <input type="text" placeholder="Destination">
+                    <button id='submitBtnReg'>Submit</button>
+                    <span class='modal-close' id='modal-close-register-home'>X</span>
+                </form>
+            </div>
+        </div> -->
+        <div id='hotelPageContainer'></div>
+
+
+        <div id="favouriteHotels">
+
+        </div>
+    </main>
+
+    <footer>
+        <div>
+            <div id="subscriptionFooterContainer">
+                <h2>Спестете време и пари!</h2>
+                <p>Регистрирайте се и ще ви изпращаме най-добрите оферти</p>
+
+                <div id="emailFooterContainer">
+                    <input type="email" placeholder="Вашият имейл">
+                    <button>Абонирай се</button>
+                </div>
+
+                <div id="footerCheckboxContainer">
+                    <input type="checkbox" value='sendLink' id='jobTrip'>
+                    <label for="sendLink">Изпратете ми линк за БЕЗПЛАТНО изтегляне на мобилното приложение
+                        Booking.com!</label>
+                </div>
+            </div>
+
+            <div id="registerFooterContainer">
+                <div id="registerFooterButtonContainer">
+                    <a href="#" class="registerButton">Регистрирайте мястото си за настаняване</a>
+                </div>
+
+                <div id="registerFooterLinks">
+                    <a href="#">Версия за мобилни телефони</a>
+                    <a href="#">Вашия акаунт</a>
+                    <a href="#">Променете резервацията си онлайн</a>
+                    <a href="#">Връзка с отдел "Обслужване на клиенти"</a>
+                    <a href="#">Станете наш дистрибуционен партньор</a>
+                    <a href="#">Booking.com за Бизнес</a>
+                </div>
+            </div>
+
+            <div id="footerBottomContainer">
+                <div id="footerBottomLinks">
+                    <ul>
+                        <li><a href="#">Държави</a></li>
+                        <li><a href="#">Области</a></li>
+                        <li><a href="#">Градове</a></li>
+                        <li><a href="#">Райони</a></li>
+                        <li><a href="#">Хотели</a></li>
+                        <li><a href="#">Забележителности</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="#">Домове</a></li>
+                        <li><a href="#">Апартаменти</a></li>
+                        <li><a href="#">Хотелски Комплекси</a></li>
+                        <li><a href="#">Вили</a></li>
+                        <li><a href="#">Хостели</a></li>
+                        <li><a href="#">Къщи за гости</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="#">Всички видове настаняване</a></li>
+                        <li><a href="#">Отзиви</a></li>
+                        <li><a href="#">Сезонни и ваканционни оферти</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="#">Коли под наем</a></li>
+                        <li><a href="#">Търсене на самолетни билети</a></li>
+                        <li><a href="#">Резервации на места в ресторант</a></li>
+                        <li><a href="#">Booking.com за туристически агенции</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="#">Често задавани въпроси за Коронавируса (COVID-19)</a></li>
+                        <li><a href="#">За Booking.com</a></li>
+                        <li><a href="#">Връзка с отдел „Обслужване на клиенти“</a></li>
+                        <li><a href="#">Помощ за партньори</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Пресцентър</a></li>
+                        <li><a href="#">Център с инструменти за безопасност</a></li>
+                        <li><a href="#">Връзка с инвеститори</a></li>
+                        <li><a href="#">Правила и условия </a></li>
+                        <li><a href="#">Разрешаване на спорове</a></li>
+                        <li><a href="#">Управление на настройките за поверителност</a></li>
+                        <li><a href="#">Корпоративни контакти</a></li>
+                    </ul>
+                </div>
+
+                <div id="footerBottomOffices">
+                    <p>Booking.com B.V. с централен офис в Амстердам, Нидерландия, предлага обслужване от 198 офиса в 70
+                        държави по света.
+                    </p>
+                </div>
+
+                <div id="extranetContainer">
+                    <a
+                        href="https://account.booking.com/sign-in?op_token=EgVvYXV0aCKkAQoUNlo3Mm9IT2QzNk5uN3prM3BpcmgSCWF1dGhvcml6ZRoaaHR0cHM6Ly9hZG1pbi5ib29raW5nLmNvbS8qX3sidXRtX21lZGl1bSI6ImZyb250ZW5kIiwidXRtX3NvdXJjZSI6ImV4dHJhbmV0X2xvZ2luX2Zvb3RlciIsInV0bV9jYW1wYWlnbiI6ImxvZ2luX2Zvb3Rlcl92MCJ9QgRjb2RlKkQw7Mr-0tPWJDoAQjIKFWV4dHJhbmV0X2xvZ2luX2Zvb3RlchIIZnJvbnRlbmQaD2xvZ2luX2Zvb3Rlcl92MFj5rpCBBg">Влизане
+                        в Екстранет</a>
+                </div>
+
+                <div id="copyrightContainer">
+                    <p>Авторско право © 1996–2021 Booking.com™. Всички права запазени.</p>
+                </div>
+
+                <div id="lastFooterContainer">
+                    <p>Booking.com е част от Booking Holdings Inc. – световният лидер в онлайн туризма и съпътстващите
+                        услуги.</p>
+                    <div id='footerPicturesContainer'>
+                        <img class='footerLogos' src="assets/images/bookingFooterLogo.png" alt="">
+                        <img class='footerLogos' src="assets/images/pricelineFooterLogo.png" alt="">
+                        <img class='footerLogos' src="assets/images/kayakFooterLogo.png" alt="">
+                        <img class='footerLogos' src="assets/images/agadaFooterLogo.png" alt="">
+                        <img class='footerLogos' src="assets/images/rentalCarsFooterLogo.png" alt="">
+                        <img class='footerLogos' src="assets/images/openTableFooterLogo.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/constants.js"></script>
+    <script src="assets/js/utils.js"></script>
+    <script src="assets/js/Hotel.js"></script>
+    <script src="assets/js/HotelManager.js"></script>
+    <script src="assets/js/Carousels/firstCarousel.js"></script>
+    <script src="assets/js/Carousels/secondCarousel.js"></script>
+    <script src="assets/js/Carousels/thirdCarousel.js"></script>
+    <script src="./assets/js/userService.js"></script>
+    <script src="assets/js/printUtils/printAllHotels.js"></script>
+    <script src="assets/js/printUtils/printSingleHotel.js"></script>
+    <script src="assets/js/printUtils/printLikedHomes.js"></script>
+    <script src="./assets/js/favouritesController.js"></script>
+    <script src="assets/js/HotelController.js"></script>
+    <script src="assets/js/loginController.js"></script>
+    <script src="hotels.js"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>
